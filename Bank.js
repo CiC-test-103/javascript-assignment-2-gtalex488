@@ -31,7 +31,7 @@ class Account {
     deposit(amount) {
         if (amount > 0) {
             this.balance += amount; 
-            this._transactionHistory.push({transactionType: 'Deposit', amount: amount, balance: this.balance});
+            this._transactionHistory.push({transactionType: 'Deposit', amount: amount});
             console.log(`${this.name} deposited ${amount}. Balance: ${this.balance}                    `);
         } else {
             console.log("Deposit amount cannot be negative. Please enter a positive number.");
@@ -47,7 +47,7 @@ class Account {
         }
         else {
             this.balance -= amount;
-            this._transactionHistory.push({transactionType: 'Withdrawal', amount: amount,balance: this.balance});
+            this._transactionHistory.push({transactionType: 'Withdrawal', amount: amount});
             console.log(`${this.name} withdraws ${amount}. New balance: ${this.balance}`);
         } 
      }
@@ -75,7 +75,7 @@ class Account {
         });
         console.log(`Transferred ${amount} from ${this.name} to ${recipientAccount.name}.`);
     }    
-// Return check balances 
+// Return 
     checkBalance() {
         return this.balance;
     }
